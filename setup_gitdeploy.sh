@@ -15,7 +15,7 @@ cd hooks
 echo "#!/bin/sh
 git --work-tree=/var/www/${appName} --git-dir=/var/repo/${appName}.git checkout -f
 sleep 5
-chmod +x /var/www/${appName}/build.sh
+chmod +x /var/www/${appName}/run.sh
 export SRCDIR=/var/www/${appName}
 . /var/www/${appName}/run.sh
 " >> post-receive
