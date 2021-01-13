@@ -12,6 +12,7 @@ cd repo
 mkdir "${repoName}.git" && cd "${repoName}.git"
 git init --bare
 cd hooks
+mkdir -p "/var/www/${appName}"
 echo "#!/bin/sh
 git --work-tree=/var/www/${appName} --git-dir=/var/repo/${appName}.git checkout -f
 sleep 5
