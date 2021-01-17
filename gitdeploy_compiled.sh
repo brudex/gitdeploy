@@ -3,10 +3,10 @@ echo -n "Enter app name :"
 read appName
 echo -n "Enter git folder? /var/repo/${appName}.git: "
 read repoName
-echo -n "Deploy script file. Located in project root- Default `run.sh` : "
+echo -n "Deploy script file. Located in project root- Default 'run.sh' : "
 read scriptFile
 
-if [ -z $repoName];
+if [ -z $repoName]; then
   repoName="/var/repo/${appName}.git"
 fi
 if [ ${repoName: -4} -ne ".git" ]; then

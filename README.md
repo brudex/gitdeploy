@@ -2,3 +2,5 @@
 
 # Execute with
 source <(curl -s https://raw.githubusercontent.com/brudex/gitdeploy/master/setup_gitdeploy.sh)
+
+source <(curl -s https://raw.githubusercontent.com/brudex/gitdeploy/master/gitdeploy_compiled.sh)
