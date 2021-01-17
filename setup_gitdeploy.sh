@@ -23,6 +23,6 @@ git --work-tree=/var/www/${appName} --git-dir=/var/repo/${appName}.git checkout 
 sleep 5
 chmod +x /var/www/${appName}/${scriptFile}
 export SRCDIR=/var/www/${appName}
-. /var/www/${appName}/r${scriptFile}
+. /var/www/${appName}/${scriptFile}
 " >> post-receive
 chmod +x post-receive
