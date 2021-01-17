@@ -1,7 +1,7 @@
 #!/bin/bash
 echo -n "Enter repo name :"
 read repoName
-echo -n "Enter app name : "
+echo -n "Enter app name :"
 read appName
 echo -n "Deploy script file. Located in project root- Default `run.sh` : "
 read scriptFile
