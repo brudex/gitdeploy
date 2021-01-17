@@ -1,8 +1,13 @@
 #!/bin/bash
 echo -n "Enter repo name :"
 read repoName
-echo "Enter app name : "
+echo -n "Enter app name : "
 read appName
+echo -n "Deploy script file. Located in project root- Default `run.sh` : "
+read scriptFile
+if [ -z $scriptFile];
+  scriptFile="run.sh"
+fi
 cd /var
 #create repo dir if not exist
 if [[ ! -d repo ]]; then
@@ -16,8 +21,8 @@ mkdir -p "/var/www/${appName}"
 echo "#!/bin/sh
 git --work-tree=/var/www/${appName} --git-dir=/var/repo/${appName}.git checkout -f
 sleep 5
-chmod +x /var/www/${appName}/run.sh
+chmod +x /var/www/${appName}/${scriptFile}
 export SRCDIR=/var/www/${appName}
-. /var/www/${appName}/run.sh
+. /var/www/${appName}/r${scriptFile}
 " >> post-receive
 chmod +x post-receive
