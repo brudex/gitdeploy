@@ -3,9 +3,9 @@ echo -n "Enter repo name :"
 read repoName
 echo -n "Enter app name :"
 read appName
-echo -n "Deploy script file. Located in project root- Default `run.sh` : "
+echo -n "Deploy script file. Located in project root- Default 'run.sh' : "
 read scriptFile
-if [ -z $scriptFile];
+if [ -z $scriptFile]; then
   scriptFile="run.sh"
 fi
 cd /var
