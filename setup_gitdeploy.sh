@@ -27,13 +27,13 @@ fi
 if [[ ! -d $REPO_DIR ]]; then
   mkdir -p $REPO_DIR
 fi
-cd repo
-mkdir "${repoName}.git" && cd "${repoName}.git"
+cd $REPO_DIR
+mkdir "${REPO_DIR}/${repoName}.git" && cd "${REPO_DIR}/${repoName}.git"
 git init --bare
 cd hooks
 mkdir -p "${WWW_DIR}/${appName}"
 echo "#!/bin/sh
-git --work-tree=${WWW_DIR}/${appName} --git-dir=${REPO_DIR}/${appName}.git checkout -f
+git --work-tree=${WWW_DIR}/${appName} --git-dir=${REPO_DIR}/${repoName}.git checkout -f
 sleep 5
 chmod +x ${WWW_DIR}/${appName}/${scriptFile}
 export SRCDIR=${WWW_DIR}/${appName}
