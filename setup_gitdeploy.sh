@@ -40,3 +40,4 @@ export SRCDIR=${WWW_DIR}/${appName}
 . ${WWW_DIR}/${appName}/${scriptFile}
 " >> post-receive
 chmod +x post-receive
+echo "git url ssh://[username]@[server-url]/${REPO_DIR}/${repoName}.git "
